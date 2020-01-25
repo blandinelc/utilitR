@@ -11,3 +11,6 @@ fwrite(substance_bzh, file = "substance_bzh_20132018.csv", sep = ";")
 #Extraire les différents ID
 substance_bzh %>% 
   distinct(csv)
+
+#Afficher une partie d'un dataset
+slice(airports, 1:5)
