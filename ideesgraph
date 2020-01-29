@@ -1,0 +1,45 @@
+  ###---- Graph lollipop ----
+  
+# https://www.r-graph-gallery.com/lollipop-plot.html 
+
+  ## version basique
+  
+library(ggplot2)
+#il faut ajouter à un graph de points deux variables aes() au geom_segment() : xend et yend
+
+#Data avec 2 variables numériques
+data <- data.frame(x=seq(1,30), y=abs(rnorm(30)))
+
+ggplot(data, aes(x = x, y = y)) +
+  geom_point() + 
+  geom_segment( aes(x = x, xend = x, y = 0, yend = y))
+
+#Data avec une variable catégorique et une variable num
+data <- data.frame(
+  x=LETTERS[1:26], 
+  y=abs(rnorm(26))
+
+ggplot(data, aes(x = x, y = y)) +
+  geom_point() + 
+  geom_segment( aes(x = x, xend = x, y = 0, yend = y))
+
+  ## Amélioration du style
+  
+ggplot(data, aes(x = x, y = y), color = "grey") +     #adoucit la couleur du segment
+  geom_point(color = "orange", size = 4) +            #ajoute une couleur au point
+  geom_segment( aes(x = x, xend = x, y = 0, yend = y)) +
+  theme_light() +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks.x = element_blank())
+
+
+  ###---- Circular barplot ----
+# https://www.r-graph-gallery.com/circular-barplot.html
+
+
+  ###---- Graph radar ou "spider chart" ----
+# https://www.r-graph-gallery.com/142-basic-radar-chart.html
+library(fmsb)
+# (Avec autres suggestions)
