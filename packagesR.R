@@ -4,11 +4,13 @@ library(data.table) # permet d'utiliser fread() & fwrite()
 library(foreign) #pour lire les fichiers .dbf via read.dbf()
 
 
+
 #### Autres ####
 
 ## Réorganiser les data
 install.packages("reshape2") #un peu daté, privilégier tidyr avec pivot_longer() & co
 library(reshape2)
+
 
 ## Sauvegarder des variables
 
@@ -26,6 +28,7 @@ df <- read.fst("dataset.fst")
   #possibilité de sélectionner des colonnes spécifiques à importer
 df_subset <- read.fst("dataset.fst", c("Logical", "Factor"), from = 2000, to = 5000)
 
+
 ## Extraire des tableaux de pdf
 install.packages("tabulizer")
 library(tabulizer)
@@ -39,7 +42,9 @@ install.packages("tesseract")
 library(tesseract)
 
 
+
 #### >Outils utiles< ####
+
 
 ##### Formater un code departement à deux chiffres####
 
@@ -65,10 +70,19 @@ df$dep <- df$dep %>%
          paste0("0", ),
          ))
 
+
+
 #### Créer un tibble facilement ####
+
 df2 <- tribble(
   ~date, ~commune, ~dep,
   "01/01/2019", "651", "29",
   "02/02/2019", "001", "35",
   "03/03/2019", "251", "1"
 )
+
+
+
+#### Modifier une valeur spécifique d'une variable avec dplyr ####
+
+df <- df %>% mutate(height = replace(height, height == 20, NA)) #ne pas oublier de remettre le nom de la variable dans le 2e argument
