@@ -43,3 +43,16 @@ ggplot(data, aes(x = x, y = y), color = "grey") +     #adoucit la couleur du seg
 # https://www.r-graph-gallery.com/142-basic-radar-chart.html
 library(fmsb)
 # (Avec autres suggestions)
+
+
+
+#---- Réograniser un graphique ----
+
+#Réordonner les barres d'un geom_bar() selon les valeurs
+#https://community.rstudio.com/t/ggplot-barplot-in-decending-order/31126/2
+
+ggplot(csp, aes(reorder(x, y), y)) +
+  geom_bar(stat = "identity") +
+  coord_flip()
+  
+  
