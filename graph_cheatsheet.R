@@ -7,6 +7,8 @@ library(tidyverse)
 ggplot(df, aes(x, y, group = variable)) +
   geom_line()
 
+    #sur le group avec ggplot : https://ggplot2.tidyverse.org/reference/aes_group_order.html
+
 
 
 ## Modifier le style des libellés d'axes ----
@@ -47,7 +49,8 @@ ggplot(df, aes(x, y, group = variable)) +
 
   
 ## Modifier les textes accompagnant le graphique ----
-  
+      #https://www.datanovia.com/en/fr/blog/ggplot-titre-sous-titre-et-legende/#centrez-la-position-du-titre
+
   
   ### Le texte du titre
   labs(title = "Titre du graphique")
