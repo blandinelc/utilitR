@@ -44,11 +44,14 @@ ggplot(df, aes(x, y, group = variable)) +
         axis.text = element_text(size = 6),
         
         #modifier la taille du libellé des axes
-        axis.title = element_text(size = 9))
+        axis.title = element_text(size = 9),
 
+        #incliner les libellés des ticks
+        axis.text.x = element_text(angle = 90))
 
   
 ## Modifier les textes accompagnant le graphique ----
+
       #https://www.datanovia.com/en/fr/blog/ggplot-titre-sous-titre-et-legende/#centrez-la-position-du-titre
 
   
