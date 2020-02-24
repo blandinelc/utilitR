@@ -115,8 +115,9 @@ ggplot(df, aes(x, y, group = variable)) +
                     values = couleurs)
   
   ### Faire disparaître une légende pour une esthétique particulière
-  labs(size = elment_blank(),
-       fill = element_blank())
+  guides(size = guide_legend(), 
+         alpha = "none", 
+         color = guide_colourbar())
 
 
 
