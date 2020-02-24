@@ -85,9 +85,12 @@ ggplot(df, aes(x, y, group = variable)) +
 ## Modifier la légende ----
   
   
-  ### Modifier le titre
+  ### Modifier le titre du graphique
   labs(title = "Les cas pour 1000 habitants en 2019 sur 11 délits")
   
+  ### Modifier le titre d'une esthétique de la légende
+  labs(size = "Titre pour la taille",
+       fill = "Titre pour la couleur")
   
   ### Modifier la position
   theme(legend.position = "bottom")
