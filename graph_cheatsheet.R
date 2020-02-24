@@ -114,7 +114,12 @@ ggplot(df, aes(x, y, group = variable)) +
                     #appeler les couleurs prédéfinies
                     values = couleurs)
   
-  
+  ### Faire disparaître une légende pour une esthétique particulière
+  labs(size = elment_blank(),
+       fill = element_blank())
+
+
+
   
 ## Modifier les titres et aspects en facet_wrap() ----
   
