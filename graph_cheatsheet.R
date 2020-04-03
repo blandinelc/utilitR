@@ -31,6 +31,13 @@ ggplot(df, aes(x, y, group = variable)) +
         panel.grid.major = element_blank())
   
   
+### Modifier les marques d'un axe x basé sur des dates
+
+#https://stackoverflow.com/questions/30018187/changing-tick-intervals-when-x-axis-values-are-dates
+
+p +
+  scale_x_date(date_breaks = "months" , date_labels = "%b-%y")
+
   
 ### Modifier le nom des axes
   labs(x = "titre_de_l_axe_x",
