@@ -72,6 +72,18 @@ p +
   
   ### Modifier le style de la source
   theme(plot.caption = element_text(size = 10, hjust = 0.5))
+
+  ### Multiples notes/sources
+  
+  #En placer deux
+  #https://stackoverflow.com/questions/47025729/how-to-add-multiple-captions-in-ggplot2-outside-of-the-main-graph-area
+  p + 
+  labs(caption = c("right footer", "left footer")) + 
+  theme(plot.caption = element_text(hjust=c(1, 0)))
+
+  #Ajouter du style ou un logo avec du HTML
+  #https://stackoverflow.com/questions/60455987/caption-with-multiple-text-and-color
+  #Avec la fonction element_markdown() de la librairie ggtext
   
   
   ### Centrer le titre
